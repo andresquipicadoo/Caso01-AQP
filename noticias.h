@@ -50,7 +50,7 @@ class noticia{
 
     void eliminarNoticia(){
         //Este metodo se encarga de eliminar la noticia donde se tiene que buscar una palabra digitada por el usuario en la lista
-        //Por lo va a ser necesario  por lo que va a ser necesario llamar a los metodos borrarElemento(string palabra) y buscar(string palabra) de listaDoble.h.
+        //Por lo va a ser necesario llamar a los metodos borrarElemento(string palabra) y buscar(string palabra) de listaDoble.h.
         //En caso de que no se encuentre una noticia con palabra digitada(titular) se le mostrara un
         //mensaje al usuario de que "No se puede borrar la notica debido a que la palabra digitada no coincide con las noticias disponibles".
     }
