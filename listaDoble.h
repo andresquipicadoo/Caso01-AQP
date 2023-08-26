@@ -8,13 +8,12 @@ class nodoLista{
 
 
 };
-typedef nodoLista* pnode;
+
 
 
 class Lista_Doble{
   public:
-     Lista_Doble() {first=NULL;}
-     ~Lista_Doble();
+    
 
 
     void insertar(int fecha,string titular,string cuerpo , string url){
@@ -60,10 +59,7 @@ class Lista_Doble{
 
         // Este metodo se encarga de validar si la lista se encuentra vacia o no.
     }
-  private:
-    pnode first;
-
-
+  
 
 
 
