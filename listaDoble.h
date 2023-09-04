@@ -3,67 +3,79 @@
 #include <iostream>
 using namespace std;
 
-class nodoLista{
-    public:
+#ifndef  listaDoble_class
+#define  listaDoble_class
 
 
-};
+// Clase de la Lista Doble
+class ListaDoble{
 
-
-
-class Lista_Doble{
   public:
-    
+    int fecha;
+    string nombre,autor, titular,descripcion,url;
+    ListaDoble*siguiente;
+    ListaDoble* anterior;
+    ListaDoble *primerNodo;
+    ListaDoble(int fecha,string autor,string nombre,string titular,string descripcion,string url){
+        this->fecha=fecha;
+        this->autor=autor;
+        this->nombre=nombre;
+        this->titular=titular;
+        this->descripcion=descripcion;
+        this->url=url;
 
-
-    void insertar(int fecha,string titular,string cuerpo , string url){
-        //Este metodo se encarga de insertar una nueva noticia en la lista ya sea en el incio final o en
-        // cualquier otra posicion.
+        siguiente=anterior = NULL;
     }
 
-    int  largoLista(){
-        //Este metodo se encarga de recorrer la lista  desde el primer elemento de la lista hasta
-        // el ultimo elemento realizandolo  a traves de los nodos.
+    ListaDoble();//Constructor
+    ~ListaDoble();//Destructor
 
-    }
-    void buscar(string palabra){
+    //Declaracion de los metodos de lista doble
 
-        // Este metodo se encarga de buscar un elemento(Titular)  determinado de la lista que se
-        //   hasta encontrar ese elemento.
+    void insertarFinal(int fecha,string autor,string nombre,string titular ,string descripcion,string url);
+      // Explicacion:
+      // Este metodo se encarga de insertar noticias a final de la lista doble.
 
-    }
-    void buscarFecha(int fecha){
-       // Este metodo se encarga de buscar la fecha de una noticia  determinada de la lista que se
-      // va recorriendo  hasta encontrar esa fecha . Este metodo va ser importante para el metodo buscarNoticia() de noticias.h.
-      
-
-
-    }
-    void buscarPosicion(int dato){
-        //Este metodo se encarga de buscar  en que posicion de la lista se encuentra
-        //la  noticia .
-    }
-    void mostrar (){
-
-        //Este metodo se encarga  de mostrar todas las noticias  de la lista .
-    }
-    void mostrarPosicion(int posicion){
-        //Este metodo se encarga de mostrar en que posicion de la lista se encuentra la notica .
-    }
-    void borrarElemento(string palabra){
-
-        // Este metodo se encarga de borrar una noticia de la lista lo cual
-        // lo realiza recorriendo la lista hasta encontrar el elemento a buscar para finalmente borrarlo.
-    }
-    bool listaVacia(){
-
-        // Este metodo se encarga de validar si la lista se encuentra vacia o no.
-    }
-  
+    int  largoLista();
+        // Explicacion:
+        // Este metodo se encarga de recorrer la lista  desde el primer elemento de la lista hasta
+        // el ultimo elemento realizandolo a traves de los nodos.buscar ( int tam, char** palabras);
 
 
 
+    ListaDoble * buscarFecha(int fecha);
+         // Explicacion:
+        //  Este metodo se encarga de buscar la fecha de una noticia  determinada de la lista que se
+       //   va recorriendo  hasta encontrar esa fecha.
+       // Nota: Por el momento no cumple ninguna funcion en el programa.
 
+    void buscar(int tam, char **palabras);
+    // Explicacion:
+    //  Este metodo se encarga de buscar esa palabra digitada por el usuario en la
+    //  lista doble.
+    void mostrar() ;
+       // Explicacion:
+       // Este metodo se encarga de mostrar todas las partes que componen a la noticia que se encuentra en la lista.
+
+    void mostrar5Titulares();
+    // Explicacion:
+    // Este metodo se encarga unicamente de mostrar solo los primeros cinco titulares que se encuentran
+    // en la lista.
+    void mostrarTitularPosicion() const;
+    // Explicacion:
+    // Este metodo se encarga de mostrar solamente los titulares de la noticia y su posicion actual que
+    // estos poseen.
+
+    void BorrarNoticia(int tam,char **palabras);
+          // Explicacion:
+         //  Este metodo se encarga de borrar una noticia de la lista lo cual
+        //   lo realiza recorriendo la lista hasta encontrar en este caso el titular que coi
+
+    bool listaVacia(){return primerNodo=nullptr;}
+         // Explicacion:
+        //  Este metodo se encarga de validar si la lista doble se encuentra vacia o no se encuentra vacia.
 
 };
+
+#endif
 

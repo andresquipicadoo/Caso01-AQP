@@ -2,15 +2,15 @@
 // Created by aquir on 29/8/2023.
 //
 
-#ifndef CASO1AQP_ARREGLOINPUTUSUARIO_H
-#define CASO1AQP_ARREGLOINPUTUSUARIO_H
+#include <iostream>
+#include <sstream>
+
+using namespace  std;
+
+
+int encontrarCantidadPalabras(char *entrada);
+char **generarArreglo(char *entrada, int &tamano) ;
 
 
 
-class arregloInputUsuario {
 
-};
-
-
-
-#endif //CASO1AQP_ARREGLOINPUTUSUARIO_H
