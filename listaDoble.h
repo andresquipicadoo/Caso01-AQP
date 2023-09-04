@@ -47,7 +47,6 @@ class ListaDoble{
          // Explicacion:
         //  Este metodo se encarga de buscar la fecha de una noticia  determinada de la lista que se
        //   va recorriendo  hasta encontrar esa fecha.
-       // Nota: Por el momento no cumple ninguna funcion en el programa.
 
     void buscar(int tam, char **palabras);
     // Explicacion:

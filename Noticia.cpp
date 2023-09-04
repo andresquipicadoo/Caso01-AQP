@@ -26,7 +26,7 @@ void Noticia::eliminarNoticia(ListaDoble& lista){
     // Llamada  del metodo BorrarNoticia() de listaDoble.h para que se puedan borrar las noticias con base a su titular.
     lista.BorrarNoticia(tamano, palabras);
     // Mensaje que indica que las noticias han sido borradas
-    cout << "Noticias eliminadas según las palabras ingresadas por el usuario." << endl;
+    cout << "Noticias eliminadas según las palabras digitadas por el usuario." << endl;
     // Mensaje para mostrar las noticias(titulares) que quedaron y para comprobar si realmente se llegaron a eliminar
     // se llama al metodo mostrarTitularPosicion().
     cout << "Las noticias(titulares) que quedaron son :" << endl;
@@ -83,7 +83,7 @@ void Noticia::moverArribaAbajo(ListaDoble&lista) {
     // Este if se encarga de validar que la opcion este dentro del rango y que sea correcta en caso de que no sea correcta
     // se mostrara un mensaje de error.
     if (opcion == '+' || opcion == '-') {
-        // Llamada de la funcion mostrarTitularesConPosicion() de listaDoble.h  para mostrar los titulares y la posicion actual que estos poseen.
+        // Llamada de la funcion mostrarTitularesConPosicion()   para mostrar los titulares y la posicion actual que estos poseen.
         mostrarTitularesConPosicion(lista);
         // Esta variable se encarga de almacenar la posicion actual que posee ese titular.
         int posicionActual;
@@ -129,7 +129,7 @@ void Noticia::moverArribaAbajo(ListaDoble&lista) {
             } else {
                 lista.primerNodo = actual->siguiente;
             }
-            // Este if se encarga de verificar si el nodo llmado current posee un nodo siguiente.
+            // Este if se encarga de verificar si el nodo llamado actual posee un nodo siguiente.
             if (actual->siguiente) {
                 actual->siguiente->anterior = actual->anterior;
             }
@@ -137,16 +137,16 @@ void Noticia::moverArribaAbajo(ListaDoble&lista) {
             int nuevaPosicion = (opcion == '+') ? (posicionActual - cantidad) : (posicionActual + cantidad);
             // Este if se encarga de volver a insertar el nodo en la nueva posición
             if (nuevaPosicion < 1) {
-                // Inserta el nodo en la nueva posición (al principio).
+                // Insertar el nodo en la nueva posición (al principio).
                 actual->anterior = nullptr;
                 actual->siguiente = lista.primerNodo;
                 lista.primerNodo->anterior = actual;
                 lista.primerNodo = actual;
             } else {
-                // Busca la nueva posición para el titular.
+                // Buscar la nueva posición para el titular.
                 ListaDoble* newCurrent = lista.primerNodo;
                 int newposicion = 1;
-                //Este ciclo while sencarga de buscar la nueva posicion para el titular.
+                //Este ciclo while se encarga de buscar la nueva posicion para el titular.
                 while (newCurrent != nullptr && newposicion < nuevaPosicion) {
                     newCurrent = newCurrent->siguiente;
                     newposicion++;
@@ -180,7 +180,7 @@ void Noticia::moverArribaAbajo(ListaDoble&lista) {
             // ademas sirve para combrobar si realmente los titulares subieron o bajaron de posicion.
             lista.mostrarTitularPosicion();
         } else {
-            // Si no se encontró un nodo válido en la posición especificada, se mostrara un mensaje de error
+            // Mensaje para indicar que la posicion digitada no es valida.
             cout << "Posición no válida." << endl;
         }
     } else {

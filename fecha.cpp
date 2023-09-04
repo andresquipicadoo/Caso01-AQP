@@ -8,6 +8,9 @@
 using namespace std;
 
 bool fechaValida(string &fecha){
+    // Explicacion:
+    //Este metodo se encarga de que la fecha cumpla con el formato year/month/day usando una expresion regular para
+    //validar que se cumpla el formato.
     regex formatoValido("^\\d{4}/(0[1-9]|1[0-2])/([0-2][0-9]|3[0-1])$");
       //Este expresion regular se encarga unicamente de verficar que el formato de la fecha sea
      // year/month/day.
@@ -23,8 +26,11 @@ bool esBisiesto(int annio){
     return (annio % 4 == 0 && annio % 100 != 0) || (annio % 400 == 0);
 }
 bool DiasMesesValidos(int annio,int mes,int dia){
-    //Este if valida que los annios no sean menores que 0 que los meses no sean menores 1 y ni mayores que 13 ni que los
-    // dias no sean menores que 1.
+    // Explicacion:
+     //Este metodo se encarga de validar que los meses del annio no sean menores que 1 ni mayores que 12
+    // se encarga de validar que los dias no sean menores que 1o mayores que 31, validar el mes de febrero solo tenga 28 dias o
+    // 29 dias si es bisiesto y de que en caso de los meses que tienen 30 dias no tengan ni un dia mas o un dia menos.
+
     if (annio<0 ||mes <1||mes >12 ||dia <1){
         return false;
     }
@@ -46,6 +52,9 @@ bool DiasMesesValidos(int annio,int mes,int dia){
 
 }
 void MostrarResultadoFecha(bool ValidoFormato) {
+    //Explicacion:
+    //Este metodo se encarga de mostrar la fecha e indicar si la fecha tiene el formato correcto
+    // a traves de un mensaje.
     if (ValidoFormato) {
          cout << "El formato de fecha es correcto."<<endl;
     } else {

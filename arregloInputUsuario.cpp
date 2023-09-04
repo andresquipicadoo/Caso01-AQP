@@ -8,6 +8,10 @@
 
 
 int encontrarCantidadPalabras(char *entrada) {
+    // Explicacion:
+    // Este metodo se encarga de ir contando todas las palabras digitads por el usuario y verificar que se use coma , para separar
+    // las palabras
+    //Explicacion detallada:
     //Esta variable se encarga de ir contando la cantidad de palabras digitadas por el usuario
     int cantidad = 1;
     //Se incializa un puntero llamado p que apunta al inicio de la cadena de caracteres.
@@ -29,6 +33,13 @@ int encontrarCantidadPalabras(char *entrada) {
 }
 
 char **generarArreglo(char *entrada, int &tamano) {
+
+    //Explicacion:
+    // Este metodo es el encargado de ir almacendando las palabras digitadas por el usuario y separadas por por coma
+    // generando un arreglo para almacenarlas.
+    // Se usa el caracter '\0' para dividir la cadena de caracteres en este caso las palabras en palabras individuales.
+
+    //Explicacion detallada:
     // Esta variable integer se encarga de calcular el tamaño del arreglo llamando a la función "encontrarCantidadPalabras"
     //que cuenta la cantidad de palabras en la cadena y lo almacena en "tamano".
     tamano = encontrarCantidadPalabras(entrada);
@@ -40,7 +51,7 @@ char **generarArreglo(char *entrada, int &tamano) {
     int indice = 0;
     //Este ciclo while se encarga de de recorrer la cadena hasta llegar al final.
     while (*token != '\0') {
-        //Este if se encarga de que si el caracter actual papuntado por token tiene una coma ','
+        //Este if se encarga de que si el caracter actual apuntado  por un token que tiene una coma ','
         if (*token == ',') {
             *token = '\0';
             arreglo[indice] = entrada;
@@ -51,6 +62,6 @@ char **generarArreglo(char *entrada, int &tamano) {
     }
     //Asignar la última palabra (o la única si no hay comas) al arreglo en la última posición.
     arreglo[indice] = entrada;
-     //Retornar el arreglo generado.
+     //Retornar el arreglo generado con las palabras.
     return arreglo;
 }
