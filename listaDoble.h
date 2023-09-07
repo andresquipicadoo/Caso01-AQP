@@ -1,10 +1,12 @@
 
 
 #include <iostream>
+#include <string>
+#include <stdio.h>
 using namespace std;
 
-#ifndef  listaDoble_class
-#define  listaDoble_class
+#ifndef  LISTA_DOBLE_H_
+#define  LISTA_DOBLE_H_
 
 
 // Clase de la Lista Doble
@@ -75,6 +77,7 @@ class ListaDoble{
         //  Este metodo se encarga de validar si la lista doble se encuentra vacia o no se encuentra vacia.
 
 };
+
 
 #endif
 

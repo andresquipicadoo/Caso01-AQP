@@ -5,8 +5,6 @@
 #include "arregloInputUsuario.h"
 
 
-
-
 int encontrarCantidadPalabras(char *entrada) {
     // Explicacion:
     // Este metodo se encarga de ir contando todas las palabras digitads por el usuario y verificar que se use coma , para separar
