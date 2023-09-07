@@ -160,8 +160,8 @@ public:
 };
 
 void insertarNoticiasEnLista( ListaDoble& listaDoble) {
-
-    //Este metodo se encarga de recorrer el vector y llamar al me
+    // Explicacion:
+     //Este metodo se encarga de insertar las noticias que se encuentran en la lista que se recuperan en internet.
     Newsapi newsapi;
 
     vector<News *> allrecords = newsapi.getRecords();
