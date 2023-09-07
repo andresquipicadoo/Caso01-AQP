@@ -4,8 +4,10 @@
 
 #include "Noticia.h"
 #include "arregloInputUsuario.h"
+
 void Noticia::eliminarNoticia(ListaDoble& lista){
-    // Explicacion general:
+
+// Explicacion general:
     // Este metodo se encarga de eliminar la noticia realizandolo de la sigiuente manera primero se le pide al usuario que digite
     // las palabras las cuale s se alamacenan en un arreglo posteriormente esas palabras se compararan con el titular que es un elemento
     // de la lista doble y si existe una coincidencia entre las palabras y el titular se elimina la noticia.
@@ -34,19 +36,35 @@ void Noticia::eliminarNoticia(ListaDoble& lista){
 
 
 
-
 }
 void Noticia::mostrarTodo(ListaDoble &lista) {
     // Explicacion:
-    // Este metodo se encarga de llamar al metodo de mostrar de listaDoble.h  para mostrar todas las partes que  componem
-    //  la noticia
-    lista.mostrar();
+    // Este metodo se encarga de mostrar el Autor, titular,descripcion y url de la noticia
+    ListaDoble* nodoActual = lista.primerNodo;
+
+    while (nodoActual != nullptr) {
+
+        cout << "Autor: " << nodoActual->autor << endl;
+        cout << "Titular: " << nodoActual->titular << endl;
+        cout << "Descripción: " << nodoActual->descripcion <<endl;
+        cout << "URL: " << nodoActual->url << endl;
+
+
+        nodoActual = nodoActual->siguiente;
+    }
+
 }
 void Noticia::mostrarPrimerosCinco(ListaDoble &lista) {
     // Explicacion:
-    // Este metodo se encarga de llamar al metodo de mostrar5Titulares de listaDoble.h  para mostrar los primeros 5 titulares
-    // mas relevantes
-    lista.mostrar5Titulares();
+    // Este metodo es el encargado de recorrer la lista doble y mostrar unicamente los 5 primeros titulares más relevantes.
+    ListaDoble* actual = lista.primerNodo;
+    int posicion = 1;
+
+    while (actual != nullptr && posicion <= 5) {
+        cout << "Posición " << posicion << ": " << actual->titular << endl;
+        actual = actual->siguiente;
+        posicion++;
+    }
 }
 void Noticia::mostrarTitularesConPosicion(ListaDoble& lista) {
     // Explicacion:
@@ -188,14 +206,6 @@ void Noticia::moverArribaAbajo(ListaDoble&lista) {
         cout << "Opción no válida." << endl;
     }
 }
-
-
-
-
-
-
-
-
 
 void Noticia:: buscarNoticias(ListaDoble& lista) {
     // Explicacion general:

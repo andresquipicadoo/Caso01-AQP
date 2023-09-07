@@ -1,21 +1,27 @@
 
 #include <iostream>
-#include "arregloInputUsuario.h"
 #include "listaDoble.h"
 #include "noticia.h"
+#include "news.h"
+
 
 using namespace std;
+
+
 
 int main(){
     Noticia noticias;
     ListaDoble lista;
+
+
+
      //Insertar noticias
     // Este metodo se encarga de agregar una nueva noticia  donde se le
     // pide al usuario su fecha, titular,descripcion de la noticia y url. Por lo que va a ser necesario llamar
     // al metodo de insertar(int fecha,string titular,string descripcion , string url) que se ubica en listaDoble.h.
     cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
 
-    lista.insertarFinal(20230821,"Rhea Mogul","CNN ESPAÑOL","El nuevo mapa nacional de China enfurece a sus vecinos","Filipinas se convirtió en el último país vecino de China ","https://cnnespanol.cnn.com/");
+   /* lista.insertarFinal(20230821,"Rhea Mogul","CNN ESPAÑOL","El nuevo mapa nacional de China enfurece a sus vecinos","Filipinas se convirtió en el último país vecino de China ","https://cnnespanol.cnn.com/");
     lista.insertarFinal(20230901, "Mary Gilbert, Nouran Salahieh", "CNN ESPAÑOL", "Harold se debilita a depresión tropical, luego de azotar Texas con inundaciones repentinas y cortes de energía", " La tormenta tropical Harold se debilitó a depresión tropical", "https://cnnespanol.cnn.com/");
     lista.insertarFinal(20230831, " Juan Carlos López", "CNN ESPAÑOL", "Donald Trump se declara inocente de cargos en Georgia", "Se declara inocente", "https://cnnespanol.cnn.com/");
     lista.insertarFinal(20230901, " N/A", "CNN ESPAÑOL", "Rusia reporta nuevos ataques a su territorio y Ucrania se afianza en el sur", "N/A", "https://cnnespanol.cnn.com/");
@@ -26,9 +32,9 @@ int main(){
     lista.insertarFinal(20230831, "Juan", "AFP Agencia/Teletica", "Exguarda nazi de 98 años es acusado de complicidad en asesinatos en Alemania", "La fiscalía de Giessen en Alemania anunció el viernes la acusación por complicidad en asesinatos de un exguardia del campo de concentración nazi de Sachsenhausen, al norte de Berlín, de 98 años.", "https://www.teletica.com");
     lista.insertarFinal(20230829, "Juan Jose Herrera", "Teletica, Telenoticias TN7", "Diputados rompen negociación con Hacienda e insistirán por importante rebaja a marchamo", "Los diputados rompieron la negociación que se había acordado con el Ministerio de Hacienda para llegar a un consenso en la rebaja del marchamo 2024.\n"
                                                                                                                                                                                 "", "https://www.teletica.com");
-
+*/
     cout<<endl;
-
+    insertarNoticiasEnLista(lista);
     cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
     cout<<"Mostrar las noticias por su orden de relevancia"<<endl;
     noticias.mostrarTodo(lista);
@@ -47,10 +53,6 @@ int main(){
     // relevancia tomando en cuenta su prioridad.
     cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
 
-    cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
-    cout<<"Eliminar noticias"<<endl;
-    noticias.eliminarNoticia(lista);
-    cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
 
 
     cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
@@ -64,7 +66,16 @@ int main(){
     noticias.moverArribaAbajo(lista);
     cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
 
-    cin.get();
+    cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
+    cout<<"Eliminar noticias"<<endl;
+    noticias.eliminarNoticia(lista);
+    cout<<"------------------------------------------------------------------------------------------------------------------------------"<<endl;
+
+
+
+
+
+
     return 0;
 
 }

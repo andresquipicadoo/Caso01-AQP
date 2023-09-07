@@ -2,6 +2,9 @@
 // Creado por Andres en el 26/8/2023.
 //
 #include "listaDoble.h"
+#include "json.hpp"
+
+using json = nlohmann::json;
 
 ListaDoble::ListaDoble() { //Constructor de la lista doble.
    primerNodo = NULL;
